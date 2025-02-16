@@ -7,19 +7,30 @@ universities = [
     ['Stanford', 19535, 40569],
     ['Yale', 11701, 40500]
 ]
+n=len(universities)
 
 def enrollment_stats():
     return [[student,fee] for univ, student, fee in universities]
+students=[enrollment_stats()[i][0] for i in range(n)]
+fees=[enrollment_stats()[i][1] for i in range(n)]
 
-def mean():
-    return (sum(student for student, fee in enrollment_stats()),\
-            sum(fee for student, fee in enrollment_stats()))
-#print(sum(student for student, fee in enrollment_stats()))  
+def mean(a):
+    return sum(a)/n
+ 
+def median(a):
+    a.sort()
+    if n%2==0:
+        median1=a[n//2]
+        median2=a[n//2-1]
+        return (median1+median2)/2
+    else:
+        return a[n//2]
 
-print(enrollment_stats()[:][0])
-print("Total students: ",sum(enrollment_stats()[i][0] for i in range(len(universities))))
-print("Total tuition: ",sum(enrollment_stats()[i][1] for i in range(len(universities))))
-print("____")
-print("Student mean: ", mean()[0]/len(universities))
-
-print("Tuition mean: ", mean()[1]/len(universities))
+print("Total students: ",sum(enrollment_stats()[i][0] for i in range(n)))
+print("Total tuition: ",sum(enrollment_stats()[i][1] for i in range(n)))
+print("__________")
+print("Student mean: ", round(mean(students),2))
+print("Student median: ", round(median(students),2))
+print("__________")
+print("Tuition mean: ", round(mean(fees),2))
+print("Tuition median: ", round(median(fees),2))
