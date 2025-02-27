@@ -1,0 +1,3 @@
+1000, Odil, MNS, 200
+1002, Pahlavon, MNS, 200
+1001, Hazrat, PhD, 550
