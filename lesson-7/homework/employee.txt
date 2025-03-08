@@ -1,0 +1,4 @@
+1000, Odil, MNS, 250
+1001, Akbar, MNS, 250
+1002, Pahlavon, MNS, 250
+1004, Shaxzod, MNS, 1000
